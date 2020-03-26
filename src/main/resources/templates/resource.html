@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <base th:href="@{/}">
+    <title >科技成果服务平台</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../static/css/aboutus.css" th:href="@{/css/aboutus.css}">
+    <link rel="stylesheet" href="../static/css/paper.css" th:href="@{/css/paper.css}">
+    <link rel="stylesheet" href="../static/css/paperlist.css" th:href="@{/css/paperlist.css}">
+    <link rel="stylesheet" href="../static/css/style.css" th:href="@{/css/style.css}">
+    <script src="../static/js/jquery-2.1.3.min.js" th:src="@{/js/jquery-2.1.3.min.js}"></script>
+    <script src="../static/js/layer/layer.min.js" th:src="@{/js/layer/layer.min.js}"></script>
+    <script src="../static/js/xpagination.js" th:src="@{/js/xpagination.js}"></script>
+</head>
+<style>
+    .paper-item{
+        border-bottom: #c8c8c8 solid 1px;
+        padding: 10px;
+    }
+    .go-top {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+
+        cursor: pointer;
+    }
+</style>
+<style>
+    .default .navbar.navbar2 {
+        background: #fff;
+        height: auto;
+        padding-top: 0;
+        margin-bottom: 0;
+
+    }
+</style>
+<style>
+
+    .tabs .tab-content .tab-pane {
+        padding: 30px 35px;
+        background: #f8fbfd;
+    }
+    .tabs.tabs-blue .nav-tabs li a {
+        background: #0186d5;
+    }
+
+    .tabs .nav-tabs li a {
+        border: none;
+        margin-right: 0;
+        border-radius: 0;
+        text-transform: uppercase;
+        padding: 0 57px;
+        line-height: 50px;
+        color: #fff;
+        font-family: 'Lato', sans-serif;
+        font-size: 16px;
+        font-weight: bold;
+    }
+    .nav li a {
+        line-height: 50px;
+    }
+    .p1:after {
+        content: '';
+        background: #FFD308;
+        width: 160px;
+        height: 5px;
+        display: block;
+        margin: 0 auto;
+        position: relative;
+        left: 70px;
+
+    }
+
+    .nav li a {
+        line-height: 30px;
+        font-size: 16px;
+    }
+    .nav li a:hover {
+        background:#BAE9FF;
+    }
+    .panel .panel-collapse .panel-body {
+        border-top: 0;
+        padding: 0px 2px 0 2px;
+
+    }
+    hr {
+        margin-left: -30px;
+        width: 695px;
+    }
+
+    .btn{
+        background: #0186D5;
+        color: white;
+    }
+    .tabs .tab-content .tab-pane p {
+        font-family: 'Karla', sans-serif;
+        line-height: 20px;
+        font-size: 14px;
+        margin-bottom: 0;
+
+        color: #8595b1;
+    }
+
+    .tabs .tab-content .tab-pane h4 {
+        font-family: 'Lato', sans-serif;
+        font-weight: bold;
+        text-transform: lowercase;
+        color: #404d5f;
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+    footer .footer_menuList .menuList ul li a {
+
+        font-size:14px;
+    }
+</style>
+<style>
+    .pagination button:hover{
+        background: #0186d5;
+        color: white;
+    }
+    .pagination button{
+        border:0px  ;
+        background: #e5f0fb;
+        color: #404d5f;
+        width: 30px;
+        height: 25px;
+    }
+</style>
+<body class="default">
+<section class="row top_bar">
+    <div class="" style="margin-left: 62px;margin-right:60px;margin-top: 10px;">
+        <div class="row ">
+            <div class="fleft phone">
+                <p><a href="#" style="
+       text-decoration: none;
+       color: #03536A;
+   ">Intelligent Service Platform for Science and Technology Information</a></p>
+            </div>
+            <div class="fright">
+
+                <div class="fleft" sec:authorize="!isAuthenticated()"><strong><a href="#"  th:href="@{/user/login}" style="
+          			text-decoration: none;
+          			color: #03536A;" >Sign in</a></strong></div>
+                <div class="fleft" sec:authorize="isAuthenticated()"><span style="
+                    text-decoration: none;
+                    color: #03536A;"><span class="glyphicon glyphicon-user"></span>&nbsp;<strong  sec:authentication="name"></strong></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+<div class="content container" style="min-height: 650px;">
+
+    <section class="row content_section">
+        <div class="container" style="min-height: 400px;">
+            <div class="row container">
+
+                <div class="col-sm-12 col-md-3 sidebar" style="padding-left: 60px;">
+                    <div class="panel-group accordion white_bg sidefilter" id="accordion" role="tablist"
+                         aria-multiselectable="true" style="margin-top: 36px;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a style="font-size:16px;text-transform: capitalize;text-decoration: none;"> 专利分类</a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse">
+                                <div class="panel-body" style="padding-top: 5px;">
+                                    <div class="panel-body" style="padding-left: -16px;">
+                                        <ul class="nav " role="tablist">
+                                            <li role="presentation" class="active"><a th:href="@{/resource/resourcelist(type=云计算)}">云计算</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=互联网支付)}" > 互联网支付</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=其他创新业务)}" > 其他创新业务</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=大数据)}" > 大数据</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=广告及优惠)}" > 广告及优惠</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=移动支付)}" > 移动支付</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=线下传统业务)}" > 线下传统业务</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=计算机软件)}" > 计算机软件</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=金融IC卡)}" > 金融IC卡</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=风险防范（前端）)}" > 风险防范（前端）</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=风险防范（后端）)}" > 风险防范（后端）</a></li>
+                                            <li role="presentation"><a th:href="@{/resource/resourcelist(type=all)}" > 所有</a></li>
+                                        </ul>
+
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div> <!--Panel-->
+
+                    </div>
+
+                    <a href="resource/upload" sec:authorize="hasRole('ROLE_ADMIN')" class="btn btn-default col-sm-12 col-md-3" style="width: 100%;margin-top: 30px"><span class="glyphicon glyphicon-file"></span>&nbsp;上传数据</a>
+
+                </div>
+
+                <!--/*@thymesVar id="page" type="org.springframework.data.domain.Page<com.xh.website.module.resource.entity.Resource>"*/-->
+
+                <div class="col-sm-12 col-md-8 blog_list" style="min-height:500px ;">
+
+                    <div class="media blog row" style="background-color: #0186d5;margin-top: 5px;">
+                        <h4 class="panel-title" style="margin-top: 20px;margin-bottom: -10px;">
+                            <a style="color: #fff; padding-left: 35px;text-decoration: none;font-size: 17px;"><span th:text="${type}"></span></a>
+                        </h4>
+                    </div>
+
+                    <div id='papers_div'>
+                        <div class="">
+
+                            <div class="row ">
+                                <div class="tabs tabs-blue row m0 ">
+                                    <div class="tab-content ">
+                                        <div role="tabpanel" class="tab-pane active" id="tab1"
+                                             style="padding-top: 30px;width: 705px;margin-left: 15px;padding-bottom:90px ;">
+                                            <div class="paperlist">
+                                                <!--/*@thymesVar id="resource" type="com.xh.website.module.resource.entity.Patent"*/-->
+                                                <div id="res_container">
+                                                    <div class="paper-item " th:each="resource : ${page.getContent()}">
+                                                        <a style="text-decoration: none;" th:href="@{${resource.getPatentURL()}}"><h4
+                                                                th:text="${resource.getName()}">Paper heading title
+                                                            heading
+                                                            title here</h4></a>
+                                                        <p style="display: -webkit-box;-webkit-box-orient: vertical;-webkit-line-clamp: 2;overflow: hidden;"><b style="color: #414f61">Abstract:&nbsp;:</b>&nbsp;&nbsp;<span
+                                                                th:text="${resource.getAbstr()}">(2017/09/12)</span>
+                                                        </p>
+                                                        <p><b style="color: #414f61">Date&nbsp;:</b>&nbsp;&nbsp;<span
+                                                                th:text="${#dates.format(resource.getDate(),'yyyy-MM-dd')}">(2017/09/12)</span>
+                                                        </p>
+                                                        <p style="text-align: right"><a style="text-decoration: none;"
+                                                                th:href="@{${'http://'+resource.getPatentURL()}}"><span
+                                                                class="glyphicon glyphicon-link"
+                                                                aria-hidden="true"></span>&nbsp;&nbsp;相关链接</a></p>
+                                                    </div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="row paginationRow" style="clear: both">
+                        <div class="pagination">
+                            <button class="btn-group btn-group-lg" type="button" id="res_first"><span
+                                    class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" id="res_prev"><span
+                                    class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" id="res_next"><span
+                                    class="glyphicon glyphicon-triangle-right"
+                                    aria-hidden="true"></span></button>
+                            <button type="button" id="res_last"><span
+                                    class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+</div>
+
+
+<footer class="row" style="padding-top: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 col-lg-4 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="#"><img style="width:40%;height: 30%;float: left;margin-left:40px ;" src="assets/wq4.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-5 col-lg-5 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="">Jilin University</a></li>
+
+                        <li><a href="">College of Software Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fright copyright col-sm-6 col-md-6 col-lg-12" style="text-align: center;margin-top: -22px;">&copy; <a href="index"> 吉林大学软件工程学院 </a></div>
+        </div>
+    </div>
+</footer>
+<a href="javascript:void(0)" onclick="location.hash='#top';location.replace(location.href)">
+    <button type="button" class="btn btn-primary btn-lg go-top">
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    </button>
+</a>
+<div class="modal fade" id="searchform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="height: 100%; width: 100%;">
+    <div class="modal-dialog" role="document" style="height: 100%; width: 60%; margin-top: 99px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Smart Search</h4>
+            </div>
+            <div class="modal-body" style="height: 200px;">
+                <form id="domain-search" action="/search" method="get">
+                    <input id="domain-text" type="text" name="domain" placeholder="Search here"/>
+                    <input id="search-btn" type="submit" name="submit" value="Search"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<form hidden="hidden" id="resPageForm">
+    <input type="hidden" name="resPageNow" id="resPageNow" th:value="${page.getNumber()}">
+    <input type="hidden" name="type" id="type" th:value="${type}">
+    <input type="hidden" id="resTotalPages" th:value="${page.getTotalPages()}">
+
+</form>
+
+<script>
+    window.onscroll = function () {
+        if ($(window).scrollTop() > 180) {
+            $('.go-top').show();
+        } else {
+            $('.go-top').hide();
+        }
+    }
+</script>
+
+<script th:inline="javascript">
+    /*字符串格式化工具*/
+    String.prototype.format = function () {
+        if (arguments.length === 0) return this;
+        var obj = arguments[0];
+        var s = this;
+        for (var key in obj) {
+            s = s.replace(new RegExp("\\{\\{" + key + "\\}\\}", "g"), obj[key]);
+        }
+        return s;
+    };
+
+
+    var element1 = "<div class=\"paper-item \">\n" +
+        "                                                    <a href=\"{{href}}\" ><h4>{{title}}</h4></a>\n" +
+        "                                                    <p class=\"col-md-5 col-sm-6\"><b>Date&nbsp;:</b>&nbsp;&nbsp;<span>{{date}}</span>\n" +
+        "                                                    </p>\n" +
+        "                                                    <p class=\"col-md-3 col-sm-6 pull-right\"><a  href=\"{{href}}\" download=\"\"><span\n" +
+        "                                                            class=\"glyphicon glyphicon-download-alt\"\n" +
+        "                                                            aria-hidden=\"true\"></span>&nbsp;&nbsp;download</a></p>\n" +
+        "                                                    <hr>\n" +
+        "                                                </div>";
+
+
+    /*查询成功后更改对应的显示内容*/
+
+
+    function whenResQuerySuccess(pager, status) {
+        console.log(pager);
+        var html = "";
+        var datas = pager['content'];
+
+
+        $.each(datas, function (i, data) {
+            var date = new Date(data['date']);
+            var res = {
+                href: data['resourceURL'],
+                date: data['date'],
+                title: data['title']
+            };
+            html += element1.format(res);
+        });
+        $("#res_container").html(html);
+    }
+
+
+    /*------------------------------------------------------------------------------*/
+    $(function () {
+        /*res页面的ajax分页*/
+        var resPageNowElem = $("#resPageNow");
+
+
+        $("#res_first").click(function () {
+            if (resPageNowElem.val() <= 0) {
+                layer.msg("It's already the first page.");
+                return;
+            }
+
+            resPageNowElem.val(0);
+            $.get("resource/respage",
+                $("#resPageForm").serialize(),
+                function (pager, status) {
+                    whenResQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+        $("#res_prev").click(function () {
+            if (resPageNowElem.val() <= 0) {
+                layer.msg("There is no previous page.");
+                return;
+            }
+            resPageNowElem.val(parseInt(resPageNowElem.val()) - 1);
+            $.get("resource/respage",
+                $("#resPageForm").serialize(),
+                function (pager, status) {
+                    whenResQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+        $("#res_next").click(function () {
+            if (resPageNowElem.val() >= $("#resTotalPages").val() - 1) {
+                layer.msg("There is no next page.");
+                return;
+            }
+            resPageNowElem.val(parseInt(resPageNowElem.val()) + 1);
+
+            $.get("resource/respage",
+                $("#resPageForm").serialize(),
+                function (pager, status) {
+                    whenResQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+        $("#res_last").click(function () {
+            if (resPageNowElem.val() >= $("#resTotalPages").val() - 1) {
+                layer.msg("It's already the last page.");
+                return;
+            }
+
+            resPageNowElem.val(parseInt($("#resTotalPages").val() - 1));
+
+            $.get("resource/respage",
+                $("#resPageForm").serialize(),
+                function (pager, status) {
+                    whenResQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+    })
+
+
+</script>
+</body>
+</html>

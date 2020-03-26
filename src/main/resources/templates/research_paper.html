@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>科技成果服务平台</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../static/css/paperlist.css" th:href="@{/css/paperlist.css}">
+</head>
+<style>
+
+    .go-top {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+        display: none;
+        cursor: pointer;
+    }
+</style>
+<style>
+    .default .navbar.navbar2 {
+        background: #fff;
+        height: auto;
+        padding-top: 0;
+        margin-bottom: 0;
+        margin-top: -10px;
+    }
+</style>
+<body class="default">
+<section class="row top_bar">
+    <div class="" style="margin-left: 62px;margin-right:60px;margin-top: 10px;">
+        <div class="row ">
+            <div class="fleft phone" style="padding-bottom: 10px;">
+                <p><a href="#" style="
+	    text-decoration: none;
+	    color: #03536A;
+	">Computational Intelligence Knowledge Mapping Laboratory, School of Computer Science and Technology, Jilin
+                    University</a></p>
+            </div>
+            <div class="fright">
+
+                <div class="fleft"><strong><a href="#" style="
+        text-decoration: none;
+        color: #03536A;">Sign in</a></strong></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+<div class="content">
+    <section class="row team">
+        <div class="container">
+            <!-- <div class="col-md-6 col-sm-12 col-xs-12">
+               <form action="#" class="row m0 search_form widget">
+                   <div class="input-group">
+                      <input type="search" class="form-control" placeholder="Search here">
+                      <span class="input-group-addon"><button type="submit"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button></span>
+                   </div>
+              </form>
+            </div> -->
+        </div>
+    </section>
+    <hr>
+    <section class="filter">
+        <!-- <div class="team sub-filter container">
+            <div class="col-md-1 filter-name">
+                <p>Group:</p>
+            </div>
+            <div class="col-md-11 filter-content">
+                <a href="">catalytic Materials Genetic Engineering</a>&nbsp;&nbsp;&nbsp;
+                <a href="">catalytic Materials Genetic Engineering</a>&nbsp;&nbsp;&nbsp;
+                <a href="">catalytic Materials Genetic Engineering</a>&nbsp;&nbsp;&nbsp;
+                <a href="">catalytic Materials Genetic Engineering</a>&nbsp;&nbsp;&nbsp;
+            </div>
+        </div> -->
+        <!-- <div class="Area sub-filter container">
+            <div class="col-md-1 filter-name">
+                <p>Area:</p>
+            </div>
+            <div class="col-md-11 filter-content">
+                <a href="">Knowledge Graph</a>&nbsp;&nbsp;&nbsp;
+                <a href="">Human-computer Interaction</a>&nbsp;&nbsp;&nbsp;
+                <a href="">Natural Language Processing</a>&nbsp;&nbsp;&nbsp;
+                <a href="">Computer Vision</a>&nbsp;&nbsp;&nbsp;
+            </div>
+        </div> -->
+
+        <!-- <div class="title sub-filter container">
+            <div class="col-md-1 filter-name">
+                <p>Type:</p>
+            </div>
+            <div class="col-md-11 filter-content">
+                <div class="col-md-2 col-sm-2"><b>Paper</b></div>
+                <div class="col-md-2 col-sm-2"><a href="#">Project</a></div>
+                <div class="col-md-2 col-sm-2"><a href="#">Patent</a></div>
+                <div class="col-md-2 col-sm-2"><a href="#">Award</a></div>
+            </div>
+        </div> -->
+    </section>
+
+    <section class="row content_section">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-3 sidebar">
+                    <div class="panel-group accordion white_bg sidefilter" id="accordion" role="tablist" aria-multiselectable="true" style="margin-top: 36px;">
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a><b>Years</b></a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse">
+                                <div class="panel-body" style="padding-top: 28px;" th:each="year : ${firstThreeYearCount}">
+                                    <h4 class="sub_panel_title panel_title"><a th:href="@{http://localhost:8080/paper(searchWay=year,specificWay=${year.get('year')})}"
+                                                                               th:text="${year.get('year')}"></a><a>&nbsp;&nbsp;(</a><a
+                                            href="" th:text="${year.get('counts')} "></a><a>)</a></h4>
+
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body" style="padding-top: 28px;" th:each="year : ${restYearCount}">
+                                    <!--<h4 class="sub_panel_title panel_title"><a href="">2009 (12)</a></h4>
+                                    <h4 class="sub_panel_title panel_title"><a href="">2006 (12)</a></h4>-->
+                                    <h4 class="sub_panel_title panel_title" ><a th:href="@{http://localhost:8080/paper(searchWay=year,specificWay=${year.get('year')})}"
+                                                                               th:text="${year.get('year')}"></a><a>&nbsp;&nbsp;(</a><a
+                                            href="" th:text="${year.get('counts')} "></a><a>)</a></h4>
+                                </div>
+                            </div>
+                            <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title" style="">
+                                    <a style="background-color: #A2ADC2; color: #fff;" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                        <b>View All / Hide</b>
+                                        <span class="sign" style="background-color: #828FA8; color: #fff;"></span>
+                                    </a>
+                                </h4>
+                            </div>
+                        </div> <!--Panel-->
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a><b>Type</b></a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse">
+                                <!--<div class="panel-body"  style="padding-top: 28px;">
+                                    <h4 class="sub_panel_title panel_title"><a href="">Conference paper (45)</a></h4>
+                                    <h4 class="sub_panel_title panel_title"><a href="">Journal paper (31)</a></h4>
+                                    <h4 class="sub_panel_title panel_title"><a href="">Theses (22)</a></h4>
+                                </div>-->
+                                <div class="panel-body" style="padding-top: 28px;" th:each="type : ${type_count}">
+                                    <h4 class="sub_panel_title panel_title"><a th:href="@{http://localhost:8080/paper(searchWay=type,specificWay=${type.get('type')})}"
+                                                                               th:text="${type.get('type')}"></a><a>&nbsp;&nbsp;(</a><a
+                                            href="" th:text="${type.get('counts')} "></a><a>)</a></h4>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="panel panel-default">
+                            <div class="panel-heading">
+                                <h4 class="panel-title">
+                                    <a><b>Area</b></a>
+                                </h4>
+                            </div>
+                            <div class="panel-collapse">
+                                <!--<div class="panel-body" style="padding-top: 28px;">
+                                    <h4 class="sub_panel_title panel_title"><a href="">Knowledge Graph (45)</a></h4>
+                                    <h4 class="sub_panel_title panel_title"><a href="">Human-computer Interaction (31)</a></h4>
+                                    <h4 class="sub_panel_title panel_title"><a href="">Natural Language Processing (22)</a></h4>
+                                    <h4 class="sub_panel_title panel_title"><a href="">Computer Vision (22)</a></h4>
+                                </div>-->
+                                <div class="panel-body" style="padding-top: 28px;" th:each="area : ${area_count}">
+                                    <h4 class="sub_panel_title panel_title"><a th:href="@{http://localhost:8080/paper(searchWay=area,specificWay=${area.get('area')})}"
+                                                                               th:text="${area.get('area')}"></a><a>&nbsp;&nbsp;(</a><a
+                                            href="" th:text="${area.get('counts')} "></a><a>)</a></h4>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-12 col-md-9 blog_list">
+                    <!--<div class="media blog row">
+                        <div class="media-body col-md-9 col-sm-9">
+                            <a href="paper"><h4><b>Research on catalytic Materials Genetic Engineering</b></h4></a>
+                            <div class="row m0 meta">Authors:   <a href="#">Jihong Yu</a>   <a href="#">Yi Li</a>   <a href="#">Jihong Yu</a>   <a href="#">Yi Li</a><a href="#">Jihong Yu</a></div>
+                            <div class="row m0 meta">Class:   <a href="#">SCI</a>   </div>
+                            <p><b>Key words:</b>&nbsp;catalytic Materials Genetic Engineering catalytic Materials Genetic Engineering catalytic Materials Genetic Engineering catalytic Materials Genetic Engineering</p>
+                        </div>
+                        <p class="col-md-3 col-sm-6"><a href="#"><span class="glyphicon glyphicon-download-alt"  aria-hidden="true"></span>&nbsp;&nbsp;download</a></p>
+                    </div> --><!--single blog-->
+                    <div id="paper_div">
+                        <div id="paper_container">
+                            <div class="media blog row" th:each="paper : ${paperPage.getContent()}">
+                                <div class="media-body col-md-9 col-sm-9">
+                                    <a href="paper"><h4><b th:text="${paper.getTitle()}">title</b></h4></a>
+                                    <div class="row m0 meta">Authors: <a href="#" th:text="${paper.getAuthors()}">authors</a>
+                                    </div>
+                                    <div class="row m0 meta">Class: <a href="#" th:text="${paper.getLevel()}">level</a>
+                                    </div>
+                                    <p><b>Key words:</b>&nbsp;<span th:text="${paper.getKeywords()}">keywords</span></p>
+                                </div>
+                                <p class="col-md-3 col-sm-6"><a th:href="${paper.getPaperURL()}" href="#"><span class="glyphicon glyphicon-download-alt"
+                                                                               aria-hidden="true"></span>&nbsp;&nbsp;download</a>
+                                </p>
+                            </div> <!--single blog-->
+                        </div>
+                    </div>
+
+                    <!--按钮-->
+                    <!--<div class="row paginationRow">
+                        <ul class="pagination">
+                            <li class="active"><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                        </ul>
+                    </div>-->
+                    <div class="row paginationRow" style="clear: both">
+                        <div class="pagination">
+                            <button type="button" id="paper_first"><span
+                                    class="glyphicon glyphicon-fast-backward" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" id="paper_prev"><span
+                                    class="glyphicon glyphicon-triangle-left" aria-hidden="true"></span>
+                            </button>
+                            <button type="button" id="paper_next"><span
+                                    class="glyphicon glyphicon-triangle-right"
+                                    aria-hidden="true"></span></button>
+                            <button type="button" id="paper_last"><span
+                                    class="glyphicon glyphicon-fast-forward" aria-hidden="true"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+
+<footer class="row" style="padding-top: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 col-lg-4 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="#"><img style="width:40%;height: 30%;float: left;margin-left:40px ;" src="assets/wq4.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-5 col-lg-5 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="">Jilin University</a></li>
+
+                        <li><a href="">College of Software Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fright copyright col-sm-6 col-md-6 col-lg-12" style="text-align: center;margin-top: -22px;">&copy; <a href="index"> 吉林大学软件工程学院 </a></div>
+        </div>
+    </div>
+</footer>
+<a href="#top">
+    <button type="button" class="btn btn-primary btn-lg go-top">
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    </button>
+</a>
+<div class="modal fade" id="searchform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="height: 100%; width: 100%;">
+    <div class="modal-dialog" role="document" style="height: 100%; width: 60%; margin-top: 99px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Smart Search</h4>
+            </div>
+            <div class="modal-body" style="height: 200px;">
+                <form id="domain-search" action="/search" method="get">
+                    <input id="domain-text" type="text" name="domain" placeholder="Search here"/>
+                    <input id="search-btn" type="submit" name="submit" value="Search"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<form hidden="hidden" id="paperPageForm">
+    <!--/*@thymesVar id="graduate" type="java.lang.Boolean"*/-->
+    <input type="hidden" name="paperPageNow" id="paperPageNow" th:value="${paperPage.getNumber()}">
+    <input type="hidden" name="searchWay" id="searchWay" th:value="${searchWay}">
+    <input type="hidden" name="specificWay" id="specificWay" th:value="${specificWay}">
+    <input type="hidden" id="paperTotalPages" th:value="${paperPage.getTotalPages()}">
+</form>
+<script>
+    window.onscroll = function () {
+        if ($(window).scrollTop() > 180) {
+            $('.go-top').show();
+        } else {
+            $('.go-top').hide();
+        }
+    }
+</script>
+
+<script src="js/jquery-2.1.3.min.js"></script>
+<!--Bootstrap JS-->
+<script src="js/bootstrap.min.js"></script>
+<script src="js/layer/layer.min.js"></script>
+<!--Owl Carousel-->
+<script src="vendors/owl.carousel/js/owl.carousel.min.js"></script>
+</body>
+
+<script th:inline="javascript">
+    /*字符串格式化工具*/
+    String.prototype.format = function () {
+        if (arguments.length === 0) return this;
+        var obj = arguments[0];
+        var s = this;
+        for (var key in obj) {
+            s = s.replace(new RegExp("\\{\\{" + key + "\\}\\}", "g"), obj[key]);
+        }
+        return s;
+    };
+
+
+    var element = "<div class=\"media blog row\">\n" +
+        "                        \n" +
+        "                        <div class=\"media-body col-md-9 col-sm-9\">\n" +
+        "                            <a href=\"paper\"><h4><b>{{title}}</b></h4></a>\n" +
+        "                            <div class=\"row m0 meta\">Authors:   <a href=\"#\">{{authors}}</a>    </div>\n" +
+        "                            <div class=\"row m0 meta\">Class:   <a href=\"#\">{{level}}</a>   </div>\n" +
+        "                            <p><b>Key words:</b>&nbsp;{{keywords}}</p>\n" +
+        "                        </div>\n" +
+        "                        <p class=\"col-md-3 col-sm-6\"><a href=\"#\"><span class=\"glyphicon glyphicon-download-alt\" aria-hidden=\"true\"></span>&nbsp;&nbsp;download</a></p>\n" +
+        "                    </div>";
+
+
+    /*查询成功后更改对应的显示内容*/
+
+
+    function whenPaperQuerySuccess(pager, status) {
+        console.log(pager);
+        var html = "";
+        var datas = pager['content'];
+        $.each(datas, function (i, data) {
+            var paper = {
+                title: data['title'],
+                authors: data['authors'],
+                level: data['level'],
+                keywords: data['keywords'],
+
+            };
+            html += element.format(paper);
+        });
+        /*$.each(datas, function (i, data) {
+            var professor = {
+                photo: data['photo'],
+                href: "person?id=" + data['id'],
+                name: data['name'],
+                tel: data['telephone'],
+                email: data['email'],
+                unit: data['unit'],
+                title: data['title'],
+                field: data['field']
+            };
+            html += element1.format(professor);
+        });*/
+        //console.log(html);
+        $("#paper_container").html(html);
+    }
+
+
+    /*------------------------------------------------------------------------------*/
+    $(function () {
+        /*paper页面的ajax分页*/
+        var paperPageNowElem = $("#paperPageNow");
+
+
+        $("#paper_first").click(function () {
+            if (paperPageNowElem.val() <= 0) {
+                layer.msg("It's already the first page.");
+                return;
+            }
+
+            paperPageNowElem.val(0);
+            $.get("paperpage",
+                $("#paperPageForm").serialize(),
+                function (pager, status) {
+                    whenPaperQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+
+        $("#paper_prev").click(function () {
+            if (paperPageNowElem.val() <= 0) {
+                layer.msg("There is no previous page.");
+                return;
+            }
+            paperPageNowElem.val(parseInt(paperPageNowElem.val()) - 1);
+            $.get("paperpage",
+                $("#paperPageForm").serialize(),
+                function (pager, status) {
+                    whenPaperQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+        $("#paper_next").click(function () {
+            if (paperPageNowElem.val() >= $("#paperTotalPages").val() - 1) {
+                layer.msg("There is no next page.");
+                return;
+            }
+            paperPageNowElem.val(parseInt(paperPageNowElem.val()) + 1);
+
+            $.get("paperpage",
+                $("#paperPageForm").serialize(),
+                function (pager, status) {
+                    whenPaperQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+        $("#paper_last").click(function () {
+            if (paperPageNowElem.val() >= $("#paperTotalPages").val() - 1) {
+                layer.msg("It's already the last page.");
+                return;
+            }
+
+            paperPageNowElem.val(parseInt($("#paperTotalPages").val() - 1));
+
+            $.get("paperpage",
+                $("#paperPageForm").serialize(),
+                function (pager, status) {
+                    whenPaperQuerySuccess(pager, status);
+                },
+                'json'
+            )
+        });
+    })
+
+
+</script>
+</html>

@@ -1,0 +1,75 @@
+/*----------------------------------------------------------------*/
+.breadcrumbs {
+  background-image: url(../assets/img/bg.png);
+  height: 80px;
+  margin-bottom: 48px;
+}
+.breadcrumbs .container {
+  padding-left: 0; 
+}
+.breadcrumbs .container .bread-content {
+  padding: 26px 0px;
+}
+.breadcrumbs .container p {
+  color: #fff;
+  font-size: 17px;
+}
+.breadcrumbs .container p a {
+  color: #ccc;
+  text-decoration: none;
+}
+.breadcrumbs .container p a:hover {
+  color: #fff;
+}
+
+
+/*----------------------------------------------------------------*/
+.grouplist {
+  padding: 20px 0;
+}
+.group-img {
+  padding: 50px 32px;
+}
+.group-img img {
+  width: 240px;
+  margin: 0 auto;
+}
+.groupintro {
+  padding: 30px 28px;
+}
+/* .groupintro a {
+  display: block;
+  margin-top: 28px;
+  width: 140px;
+  padding: 6px 20px;
+  font-size: 16px;
+  background-color: #EF9022;
+  color: #fff;
+  text-decoration: none;
+} */
+.groupintro h3 {
+  font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #404d5f;
+}
+.groupintro h3:after{
+  content: '';
+    width: 85px;
+    height: 1px;
+    background: #0186d5;
+    display: block;
+    margin: 13px 0 0;
+}
+.groupintro h4 {
+  font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    color: #666;
+    margin-top: 0;
+    margin-bottom: 20px;
+}
+#group2, #group4, #group6 {
+  background-color: #eee;
+}   
+/*Group Tab End*/

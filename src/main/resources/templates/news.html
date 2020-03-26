@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <base th:href="@{/}">
+    <title>科技成果服务平台</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/font-awesome.min.css}">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../static/css/event-list.css" th:href="@{/css/event-list.css}">
+    <link rel="stylesheet" href="../static/css/news.css" th:href="@{/css/news.css}">
+    <script src="../static/js/jquery-2.1.3.min.js" th:src="@{/js/jquery-2.1.3.min.js}"></script>
+</head>
+<style>
+</style>
+<style>
+
+    .go-top {
+        position: fixed;
+        bottom: 10px;
+        right: 10px;
+
+        cursor: pointer;
+    }
+</style>
+<body class="default">
+<!--/*@thymesVar id="news" type="com.xh.website.module.news.entity.News"*/-->
+<section class="row top_bar">
+    <div class="" style="margin-left: 62px;margin-right:60px;margin-top: 10px;">
+        <div class="row ">
+            <div class="fleft phone" >
+                <p><a href="#" style="
+       text-decoration: none;
+       color: #03536A;
+   ">Intelligent Service Platform for Science and Technology Information</a></p>
+            </div>
+            <div class="fright">
+
+                <div class="fleft" sec:authorize="!isAuthenticated()"><strong><a href="#" th:href="@{/user/login}" style="
+          			text-decoration: none;
+          			color: #03536A;" >Sign in</a></strong></div>
+                <div class="fleft" sec:authorize="isAuthenticated()"><span style="
+                    text-decoration: none;
+                    color: #03536A;"><span class="glyphicon glyphicon-user"></span>&nbsp;<strong  sec:authentication="name"></strong></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav><nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/Paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+<div class="content">
+    <div>
+        <section class="achievement-title row">
+
+            <div class="container">
+                <div>
+                    <h3><b th:text="${news.getTitle()}">美国德克萨斯大学达拉斯分校Ray Baughman一行访问实验室</b></h3>
+                </div>
+            </div>
+            <div class="patent-info container">
+
+                <h4 class="col-md-12 col-sm-12"><b>Date : <span th:text="${#dates.format(news.getDate().getTime(),'yyyy年MM月dd  HH:mm')}">2017年3月29日</span></b></h4>
+                <h4 class="col-md-12 col-sm-12"><b>Participator: <span th:text="${news.getParticipator()}">XXX</span></b></h4>
+            </div>
+        </section>
+        <section class="abstract-info row">
+            <div class="title-row container">
+                <h4 class="container"><b>Content</b></h4>
+            </div>
+            <div class="abstract-detail container">
+                <p style="font-size:14px;line-height: 20px; text-align:justify; text-justify:inter-ideograph;text-indent: 2em" th:text="${news.getContent()}">
+                    3月21日，美国德克萨斯大学达拉斯分校麦克德尔米德纳米技术研究所主任、美国国家工程院院士Ray Baughman教授和ShaoliFang教授等一行人访问未来科学国际合作联合实验室。
+                </p>
+
+                <div style="text-align: center;">
+                    <img th:src="${news.getPhoto()}" src="../static/assets/blog/blog/1.jpg" alt=""
+                         style="width: 800px; margin-top: 20px; margin-bottom: 40px;">
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+<footer class="row" style="padding-top: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 col-lg-4 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="#"><img style="width:40%;height: 30%;float: left;margin-left:40px ;" src="assets/wq4.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-5 col-lg-5 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="">Jilin University</a></li>
+
+                        <li><a href="">College of Software Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fright copyright col-sm-6 col-md-6 col-lg-12" style="text-align: center;margin-top: -22px;">&copy; <a href="index"> 吉林大学软件工程学院 </a></div>
+        </div>
+    </div>
+</footer>
+<a href="javascript:void(0)" onclick="location.hash='#top';location.replace(location.href)">
+    <button type="button" class="btn btn-primary btn-lg go-top">
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    </button>
+</a>
+<div class="modal fade" id="searchform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="height: 100%; width: 100%;">
+    <div class="modal-dialog" role="document" style="height: 100%; width: 60%; margin-top: 99px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Smart Search</h4>
+            </div>
+            <div class="modal-body" style="height: 200px;">
+                <form id="domain-search" action="/search" method="get">
+                    <input id="domain-text" type="text" name="domain" placeholder="Search here"/>
+                    <input id="search-btn" type="submit" name="submit" value="Search"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onscroll = function () {
+        if ($(window).scrollTop() > 180) {
+            $('.go-top').show();
+        } else {
+            $('.go-top').hide();
+        }
+    }
+</script>
+</body>
+</html>

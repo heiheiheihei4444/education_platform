@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>ML Graph</title>
+    <script src="../static/js/jquery-3.3.1.min.js" th:src="@{/js/jquery-3.3.1.min.js}"></script>
+    <script src="../static/js/bootstrap.js" th:src="@{/js/bootstrap.js}"></script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/css/main.css" th:href="@{/css/main.css}">
+    <link rel="stylesheet" href="../static/css/chat.css" th:href="@{/css/chat.css}">
+    <script src="../static/js/index.js" th:src="@{/js/index.js}"></script>
+    <script src="../static/js/echarts.js" th:src="@{/js/echarts.js}"></script>
+    <script src="../static/js/chat.js" th:src="@{/js/chat.js}"></script>
+</head>
+<body>
+
+<nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+
+
+<div id="btn_show">
+    <button></button>
+</div>
+
+<div class="tab-content lexer-main">
+    <div class="tab-pane active" id="tab-graph">
+        <h2 class="head">Knowledge Graph</h2>
+        <div class="row">
+            <div class="col-md-7 offset-1 graph">
+
+            </div>
+        </div>
+
+
+        <div class="abs pnl">
+            <div class="top pnl-head">
+                <div>
+                    <a style="color: white;text-decoration: none;display:inline-block;padding: 10px;" href="#"
+                       id="btn_hiden">
+                        hide<span>&nbsp;>></span>
+                    </a>
+                </div>
+            </div>
+            <div class="abs cover pnl-body" id="pnlBody">
+                <div class="abs cover pnl-left">
+                    <div class="abs cover pnl-msgs scroll" id="show">
+                        <div class="msg min time" id="histStart">history</div>
+                        <div class="pnl-list" id="hists">
+                            <!-- 历史消息 -->
+                        </div>
+                        <div class="pnl-list" id="msgs">
+                            <div class="msg guest">
+                                <div class="msg-right">
+                                    <div class="msg-ball" title="今天 17:52:06">Hello</div>
+                                </div>
+                            </div>
+                            <div class="msg robot">
+                                <div class="msg-left">
+                                    <div class="msg-ball" title="今天 17:52:06">Hello,I'm a chat robot. What do you want to know about machine learning?</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="pnl-list hide" id="unreadLine">
+                            <div class="msg min time unread">history</div>
+                        </div>-->
+                    </div>
+                    <div class="abs bottom pnl-text">
+                        <!--<div class="abs top pnl-warn" id="pnlWarn">
+                            <div class="fl btns rel pnl-warn-free">
+                                <img src="../Images/icon/Smile.png" class="kh warn-btn" title="表情" id="emojiBtn" />
+                                <img src="../Images/icon/pic.png" class="kh warn-btn" title="截屏" id="emojiBtn" />
+                                <img src="../Images/icon/camera.png" class="kh warn-btn" title="图片" id="emojiBtn" />
+                                <img src="../Images/icon/edit.png" class="kh warn-btn" title="保存" id="emojiBtn" />
+                            </div>
+                        </div>-->
+                        <div class="abs cover pnl-input">
+                            <textarea class="scroll" id="text" wrap="hard" placeholder="input your question..."></textarea>
+                            <div class="abs atcom-pnl scroll hide" id="atcomPnl">
+                                <ul class="atcom" id="atcom"></ul>
+                            </div>
+                        </div>
+                        <div class="abs br pnl-btn" id="submit"
+                             style="background-color: rgb(32, 196, 202); color: rgb(255, 255, 255);"
+                             onclick="SendMsg()">Send
+                        </div>
+                        <div class="pnl-support" id="copyright"><a href="#">ChatBot</a></div>
+                    </div>
+                </div>
+                <div class="abs right pnl-right">
+                    <div class="slider-container hide"></div>
+                    <div class="pnl-right-content">
+                        <div class="pnl-tabs">
+                            <div class="tab-btn active" id="hot-tab">FAQ</div>
+                        </div>
+                        <div class="pnl-hot">
+                            <ul class="rel-list unselect" >
+                                <li class="rel-item">1.What is Naive_Bayes?</li>
+                                <li class="rel-item">2.How to achieve Classification?</li>
+                                <li class="rel-item">3.How to learn Naive_Bayes?</li>
+                                <li class="rel-item">4.What's the family of Neural_Network_Models?</li>
+                                <li class="rel-item">5.What is the learning path of Classification?</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!--<form action="/bot/bot" type="get">
+            <input placeholder="内容" name="message" id="txt_bot">
+            <input type="button" value="提交" id="btn_bot">
+        </form>-->
+    </div>
+    <div class="tab-pane fade" id="tab-chatbot">
+        <h2 class="head">Chat Bot</h2>
+        <div class="row">
+            <div class="col-md-5 offset-1">
+
+            </div>
+        </div>
+    </div>
+    <div class="tab-pane fade" id="tab-doc">
+        <div id="doc_page" class="container"></div>
+    </div>
+</div>
+<footer class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3 offset-3">
+                <h6>Copyright &copy;2018 swayer.top</h6>
+            </div>
+
+            <div class="col-md-4 offset-2">
+                <h6>❤1给窝里giao</h6>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<!--提示错误模态框-->
+<div class="modal fade">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+
+            <!-- 模态框头部 -->
+            <div class="modal-header">
+                <h4 class="modal-title">错误：</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- 模态框主体 -->
+            <div class="modal-body text-danger" id="modal-body">
+            </div>
+
+            <!-- 模态框底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">关闭</button>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+
+<script type="text/javascript">
+    function SendMsg() {
+        var text = document.getElementById("text");
+        if (text.value === "" || text.value == null) {
+            alert("发送信息为空，请输入！")
+        }
+        else {
+            var msg = SendMsgDispose(text.value);
+            drawGraph(myChart, '/bot/bot?message=' + text.value);
+            console.log(msg);
+            AddMsg('default', msg);
+            text.value = "";
+        }
+    }
+
+    // 发送的信息处理
+    function SendMsgDispose(detail) {
+        detail = detail.replace("\n", "<br>")
+        return detail;
+    }
+
+    // 增加信息
+    function AddMsg(user, content) {
+        var str = CreateMsg(user, content);
+        var msgs = document.getElementById("msgs");
+        msgs.innerHTML = msgs.innerHTML + str;
+    }
+
+    // 生成内容
+    function CreateMsg(user, content) {
+        var str = "";
+        if (user === 'default') {
+            str = "<div class=\"msg guest\"><div class=\"msg-right\"><div class=\"msg-ball\">" + content + "</div></div></div>"
+        }
+        else {
+            str = "<div class=\"msg robot\"><div class=\"msg-left\" worker=\"" + user + "\"><div class=\"msg-ball\" >" + content + "</div></div></div>";
+        }
+        return str;
+    }
+
+    function displayRes(res) {
+        if (res) {
+            var msgs = document.getElementById("msgs");
+            console.log(res);
+
+            var str = "<div class=\"msg robot\">\n" +
+                "                                <div class=\"msg-left\">\n" +
+                "                                    <div class=\"msg-ball\">" +
+                res +
+                "                                    </div>\n" +
+                "                                </div>\n" +
+                "                            </div>"
+
+
+            msgs.innerHTML = msgs.innerHTML + str;
+        }
+
+    }
+
+
+    $(function () {
+        var hidden = false;
+        $('#btn_hiden').click(function () {
+            if (hidden === false) {
+                $('.pnl').animate({right: '-=450px'});
+                $('#btn_show').show();
+                hiden = true;
+            }
+        })
+        $('#btn_show button').click(function () {
+            if (hiden === true) {
+                $('.pnl').animate({right: '+=450px'});
+                $('#btn_show').hiden();
+                hiden = false;
+            }
+        });
+    })
+
+
+    //-----------------------------------------
+    //加载图谱
+
+    var myChart = echarts.init(document.getElementsByClassName('graph')[0]);
+    $(function () {
+            drawGraph(myChart, 'node')
+        }
+    )
+
+    $('#btn_bot').click(function () {
+        drawGraph(myChart, '/bot/bot?message=' + $('#txt_bot').val());
+        // drawGraph('/bot/bot?message=How to achieve Person_Reidentification by algorithm')
+    })
+
+
+    function drawGraph(myChart, url) {
+
+        myChart.showLoading({
+            text: 'loading...',
+        });
+        $.get(url, function (result) {
+
+            var categories = [];
+            categories[0] = {name: "Task"};
+            categories[1] = {name: "Basic Knowledge"};
+            categories[2] = {name: "ML algorithm"};
+
+            var graph = JSON.parse(result);
+
+            // addCategory(graph);
+            // console.log(graph);
+            displayRes(graph.botRes);
+            var option = {
+                title: {
+                    text: 'Machine Learning Graph',
+                    top: 'bottom',
+                    left: 'right'
+                },
+
+                tooltip: {
+                    trigger: 'item',
+                    position: 'right',
+                    formatter: function (params) {
+                        var color = params.color;//图例颜色
+                        var htmlStr = '<div>';
+                        var point = '<span style="margin-right:5px;display:inline-block;width:10px;height:10px;border-radius:5px;background-color:' + color + ';"></span>';
+                        htmlStr += '</div>';
+                        if (params.dataType === 'edge') {
+                            htmlStr += (point + params.data.type);
+                            htmlStr += '</div>';
+                        }
+                        else {
+                            htmlStr += params.data.name;
+                            htmlStr += '<br/>';
+
+                            var properties = params.data.properties;
+                            for (var key in properties) {
+                                htmlStr += (point + key) + ':' + properties[key] + '<br/>';
+                            }
+                            htmlStr += '</div>';
+                        }
+                        return htmlStr;
+                    }
+                },
+                legend: [{
+                    data: categories.map(function (a) {
+                        return a.name;
+                    })
+                }],
+                animationDuration: 15000,
+                series: [
+                    {
+                        name: 'ML graph',
+                        type: 'graph',
+                        layout: 'force',
+                        data: graph.nodes,
+                        links: graph.links,
+                        roam: true,
+                        focusNodeAdjacency: true,
+                        categories: categories,
+                        itemStyle: {
+                            normal: {
+                                borderColor: '#fff',
+                                borderWidth: 1,
+                                shadowBlur: 10,
+                                shadowColor: 'rgba(0, 0, 0, 0.3)'
+                            }
+                        },
+                        draggable: true,
+                        label: {
+                            position: 'right',
+                            formatter: '{b}',
+                            show: true
+                        },
+                        edges: graph.links.map(function (edge) {
+                            return {
+                                source: edge.source.toString(),
+                                target: edge.target.toString(),
+                                type: edge.type
+                            };
+                        }),
+                        edgeSymbol: ['none','arrow'],
+                        edgeSymbolSize : 5,
+
+                        lineStyle: {
+                            color: 'source',
+                            curveness: 0.2
+                        },
+                        emphasis: {
+                            lineStyle: {
+                                width: 10
+                            }
+                        },
+                        /*force: {},*/
+                    }
+                ]
+            };
+            myChart.setOption(option);
+            myChart.hideLoading();
+        });
+
+    }
+
+    function addCategory(graph) {
+        graph.nodes.forEach(function (node) {
+            if (node.hasOwnProperty('ns0__ori_algorithm')) {
+                node.category = 2;
+            } else if (node.hasOwnProperty('ns0__preknowledge')) {
+                node.category = 1;
+            } else {
+                node.category = 0;
+            }
+        })
+    }
+
+
+</script>
+
+
+</html>
+
+

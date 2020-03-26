@@ -1,0 +1,215 @@
+/*----------------------------------------------------------------*/
+.breadcrumbs {
+  background-image: url(../assets/img/bg.png);
+  height: 80px;
+  margin-bottom: 48px;
+}
+.breadcrumbs .container {
+  padding-left: 0; 
+}
+.breadcrumbs .container .bread-content {
+  padding: 26px 0px;
+}
+.breadcrumbs .container p {
+  color: #fff;
+  font-size: 17px;
+}
+.breadcrumbs .container p a {
+  color: #ccc;
+  text-decoration: none;
+}
+.breadcrumbs .container p a:hover {
+  color: #fff;
+}
+
+
+.service_tab{
+    padding: 0px 0 0;
+}
+.service_tab #service_tab{
+    margin: 60px 0 20px;
+}
+.service_tab #service_tab li{
+    padding: 15px 15px;
+    text-align: center;
+}
+.service_tab #service_tab li a{    
+    border: 1px solid  #e5f0fb;
+    border-radius: 0;
+    padding: 0 5px 20px;
+    line-height: 1.4;
+    text-transform: capitalize;
+    font-family: 'Lato', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    color: #657188;
+    transition: all 300ms ease-in-out;
+    height: 140px;
+}
+.service_tab #service_tab li a span{
+    display: block;
+    width: 77px;
+    height: 57px;
+    margin: -25px auto 20px;
+    background: no-repeat scroll center center #e5f0fb;
+    border-left: 10px solid  #fff;
+    border-right: 10px solid  #fff;
+    transition: all 300ms ease-in-out;
+}
+.service_tab #service_tab li a:hover{
+    background: none;
+}
+.service_tab #service_tab li.active a{
+    border-color: #0186d5;
+    color: #404d5f;
+}
+.service_tab #service_tab li.active a span{
+    background-color: #0186d5;
+}
+.service_tab #service_tab li:nth-child(1) a span{
+    background-image: url(../assets/icons/service_block/tab/1-g.png);
+}
+.service_tab #service_tab li:nth-child(2) a span{
+    background-image: url(../assets/icons/service_block/tab/2-g.png);
+}
+.service_tab #service_tab li:nth-child(3) a span{
+    background-image: url(../assets/icons/service_block/tab/3-g.png);
+}
+.service_tab #service_tab li:nth-child(4) a span{
+    background-image: url(../assets/icons/service_block/tab/4-g.png);
+}
+.service_tab #service_tab li:nth-child(5) a span{
+    background-image: url(../assets/icons/service_block/tab/5-g.png);
+}
+.service_tab #service_tab li:nth-child(6) a span{
+    background-image: url(../assets/icons/service_block/tab/6-g.png);
+}
+.service_tab #service_tab li.active:nth-child(1) a span{
+    background-image: url(../assets/icons/service_block/tab/1-w.png);
+}
+.service_tab #service_tab li.active:nth-child(2) a span{
+    background-image: url(../assets/icons/service_block/tab/2-w.png);
+}
+.service_tab #service_tab li.active:nth-child(3) a span{
+    background-image: url(../assets/icons/service_block/tab/3-w.png);
+}
+.service_tab #service_tab li.active:nth-child(4) a span{
+    background-image: url(../assets/icons/service_block/tab/4-w.png);
+}
+.service_tab #service_tab li.active:nth-child(5) a span{
+    background-image: url(../assets/icons/service_block/tab/5-w.png);
+}
+.service_tab #service_tab li.active:nth-child(6) a span{
+    background-image: url(../assets/icons/service_block/tab/6-w.png);
+}
+.service_tab .tab-content a {
+   
+    margin-top: 28px;
+  
+    
+    font-size: 18px;
+}
+.service_tab .tab-content .tab-pane{
+    transition: all 300ms ease-in-out;
+}
+.service_tab .tab-content .tab-pane .col-sm-6 .row{
+    position: relative;
+}
+.service_tab .tab-content .tab-pane img{
+    width: 78%;
+}
+.service_tab .tab-content .tab-pane .ts{
+    display: block;
+    padding: 0 20px;
+    line-height: 38px;
+    background: #43b9f6;
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    position: absolute;
+    bottom: 75px;
+    right: 0;
+}
+.service_tab .tab-content .tab-pane h3{
+    font-family: 'Lato', sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    color: #404d5f;
+}
+.service_tab .tab-content .tab-pane h3:after{
+    content: '';
+    width: 85px;
+    height: 1px;
+    background: #0186d5;
+    display: block;
+    margin: 13px 0 0;
+}
+/* .service_tab .tab-content .tab-pane h4{
+    font-family: 'Lato', sans-serif;
+    line-height: 30px;
+    font-weight: normal;
+    text-transform: uppercase;
+    color: #657188;
+    margin-top: 0;
+    margin-bottom: 20px;
+} */
+.service_tab .tab-content .tab-pane p{
+    color: #8595b1;
+    line-height: 27px;
+    font-size: 16px;
+    font-weight: normal;
+    font-family: 'Karla', sans-serif;
+}
+.service_tab .tab-content .tab-pane .view_all{}
+/*----------------------------------------------------------------*/
+.grouplist {
+  padding: 20px 0;
+}
+.group-img {
+  padding: 50px 32px;
+}
+.group-img img {
+  width: 240px;
+  margin: 0 auto;
+}
+.groupintro {
+  padding: 30px 28px;
+}
+.groupintro a {
+  display: block;
+  margin-top: 28px;
+  width: 116px;
+  padding: 6px 20px;
+  font-size: 16px;
+  background-color: #EF9022;
+  color: #fff;
+  text-decoration: none;
+}
+.groupintro h3 {
+  font-family: 'Lato', sans-serif;
+    font-weight: 500;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+    color: #404d5f;
+}
+.groupintro h3:after{
+  content: '';
+    width: 85px;
+    height: 1px;
+    background: #0186d5;
+    display: block;
+    margin: 13px 0 0;
+}
+.groupintro h4 {
+  font-family: 'Lato', sans-serif;
+  
+    color: #666;
+  
+    margin-bottom: 20px;
+}
+#group2, #group4, #group6 {
+  background-color: #eee;
+}   
+/*Group Tab End*/

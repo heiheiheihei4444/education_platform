@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <base th:href="@{/}">
+    <title>科技成果服务平台</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../static/css/person-list.css" th:href="@{/css/person-list.css}">
+    <style>
+        .default .navbar.navbar2 {
+            background: #fff;
+            height: auto;
+            padding-top: 0;
+            margin-bottom: 0;
+            margin-top: -10px;
+        }
+    </style>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+    <style>
+
+        .go-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            display: none;
+            cursor: pointer;
+        }
+
+        .left_title {
+            background: #c5c5c7;
+        }
+
+        .left_title:hover {
+            background: #337ab7;
+        }
+
+        .author-info {
+            border-top: 1px #ddd solid;
+            box-shadow: 0 -6px 6px #ddd;
+        }
+
+        .title-row {
+            padding: 20px 0 0 0;
+        }
+
+        .author-info .title-row {
+            padding-top: 50px;
+        }
+
+        .author-info .title-row h4 {
+            font-family: helvetica;
+            font-weight: 500;
+            font-size: 18px;
+            margin-bottom: 30px;
+            color: #404d5f;
+        }
+
+        .author-info .title-row h4:after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: #0186d5;
+            display: block;
+            margin: 13px 0 0;
+        }
+
+        .author-info .author-card .pic > img {
+            border: 1px solid white;
+            width: 140px;
+            height: 100%;
+            margin-top: 36px;
+            margin-left: 6px;
+        }
+
+        .author-info .author-card {
+            padding-left: 0px;
+            padding-right: 0px;
+            padding-top: 0px;
+            padding-left: 0px;
+            padding-bottom: 10px;
+            border: 1px #f1e8e8 solid;
+            border-radius: 4px;
+            margin-bottom: 26px;
+
+        }
+
+        .author-card p {
+            margin-bottom: 0;
+            color: #666;
+            margin-left: 20px;
+
+        }
+
+        .author-name p {
+            line-height: 18px;
+        }
+
+        .author-info .author-card .pic {
+            padding: 0px;
+            margin-top: 0px;
+        }
+
+        .author-info > div > a {
+            text-decoration: none;
+            float: right;
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js" th:src="@{/js/jquery-2.1.3.min.js}">
+    </script>
+    <!-- <script type="text/javascript">
+    $(document).ready(function(){
+        var text = $("#hiddenp").text()
+        persons = JSON.parse(text)
+        len = persons.length
+        var persons_div = $("#person_div")
+        //根据长度动态生成person列表
+        for(var i=0;i<len;i++){
+            innerDiv = "<div class=\"media blog\">"
+            innerDiv += "<div class=\"media-left\">"
+            innerDiv += "<a href=\"/person\" style=\"padding-left: 50px;\"><img src="+'./pictures/'+(i+1)+'.jpg'+" class=\"img-reponsive\"></a>"
+            innerDiv += "</div>"
+            innerDiv += "<div class=\"media-body\">"
+            innerDiv += "<a href=\"#\"><h3 style:\"text-transform: initial;\">"+persons[i]["Family Name(EN)"]+" "+persons[i]["First Name(EN)"]+"</h3></a>"
+            innerDiv += "<div class=\"row m0 meta\">Publications : <a href=\"#\">"+persons[i]["Publications"].length+"</a> Projects : <a href=\"#\">115</a> Patents: <a href=\"\" >"+persons[i]["Patents"].length+"</a></div>"
+            innerDiv += "<p><span class=\"glyphicon glyphicon-home\" aria-hidden=\"true\"></span>&nbsp;&nbsp;&nbsp;"+persons[i]["AffiliationA/角色1所属单位"]+persons[i]["AffiliationA.1/子单位"]+"</p>"
+            innerDiv += "<p><span class=\"glyphicon glyphicon-briefcase\" aria-hidden=\"true\"></span>&nbsp;&nbsp;&nbsp;"+persons[i]["Talent Title人才称号"]+"</p>"
+            if(persons[i]["Scientific Sector(EN)"]!=''){
+                innerDiv += "<p><span class=\"glyphicon glyphicon-book\" aria-hidden=\"true\"></span>&nbsp;&nbsp;&nbsp;"+persons[i]["Scientific Sector(EN)"]+"</p>"
+            }else{
+                 innerDiv += "<p><span class=\"glyphicon glyphicon-book\" aria-hidden=\"true\"></span>&nbsp;&nbsp;&nbsp;"+persons[i]["Scientific Sector(ZH)研究方向"]+"</p>"
+            }
+            innerDiv += "</div></div>"
+            persons_div.append(innerDiv)
+        }
+        divs = document.getElementsByClassName("media-body")
+        for(var i=0;i<len;i++){
+            (function(i){
+                name_link = divs[i].children[0].children[0]
+                name_link.onclick=function(){
+                    id = i + 1
+                    window.location.href='./person.html?id=' + id
+                }
+            })(i)
+        }
+    })
+    </script> -->
+</head>
+<body class="default">
+<section id="top" class="row top_bar">
+    <div class="" style="margin-left: 60px;margin-right:60px;margin-top: 10px;">
+        <div class="row ">
+            <div class="fleft phone" style="padding-bottom: 10px;">
+                <p><a href="#" style="
+       text-decoration: none;
+       color: #03536A;
+   ">Intelligent Service Platform for Science and Technology Information
+                    University</a></p>
+            </div>
+            <div class="fright">
+
+                <div class="fleft" sec:authorize="!isAuthenticated()"><strong><a href="#" th:href="@{/user/login}"
+                                                                                 style="
+          			text-decoration: none;
+          			color: #03536A;">Sign in</a></strong></div>
+                <div class="fleft" sec:authorize="isAuthenticated()"><span style="
+                    text-decoration: none;
+                    color: #03536A;"><span class="glyphicon glyphicon-user"></span>&nbsp;<strong
+                        sec:authentication="name"></strong></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+<div class="content" style="min-height: 720px;">
+
+    <!-- <section class="row content_section" style="float: left;  margin-top:16px;">
+
+                        <div  class="left_title" style="width: 86px; height: 280px; padding-top: 120px;text-align: center;">
+                                <h4 class="panel-title">
+                                    <a href="personlist.html"style="text-decoration: none;"><b>Professor</b></a>
+                                </h4>
+                        </div>
+
+
+                         <div class="left_title" style="width: 86px; height: 280px; margin-top:6px; padding-top: 120px;text-align: center;">
+                                <h4 class="panel-title">
+                                    <a href="personlist2.html"style="text-decoration: none;"><b>Student</b></a>
+                                </h4>
+                        </div>
+
+     </section> -->
+    <!-- <section class="row content_section" style="float: left;">
+         <div class="panel panel-default">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a><b>教授</b></a>
+                </h4>
+            </div>
+        </div>
+    </section> -->
+    <section class="author-info row" style="margin-left: 5px; margin-top: 6px;">
+        <div class="title-row container">
+            <h4 class="container"><b>企业成员</b><span
+                    style="background-color: #0186d5; color: #fff;margin-left: 100px;font-size: 16px;padding: 5px 5px 5px 5px; margin-top: 10px;"
+                    data-toggle="collapse" data-parent="#author-info" href="#collapseOne2" aria-expanded="false"
+                    aria-controls="collapseOne">more&nbsp;+</span></h4>
+
+
+            <!--/*@thymesVar id="personList" type="java.util.List<com.xh.website.module.person.entiy.Person>"*/-->
+                        <div th:each="person : ${personList}" class="col-md-3 col-sm-6 col-xs-12" style="width:390px;">
+                            <div class="author-card col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-4 pic" style="margin-top: -18px;">
+                                    <img style="height: 140px;object-fit: cover" th:src="${person.photo}" class="img-circle" alt="Responsive image">
+                                </div>
+                                <div class="author-name col-md-8 col-sm-8 col-xs-8"
+                                     style="margin-top: 16px; padding-left: 30px; font-size: 12px;">
+                                    <a th:href="${'person/person?id='+person.id}" style="text-decoration: none;"><h3 style="padding-left: 18px; margin-top: 2px;" th:text="${person.name}">
+                                        徐昊</h3></a>
+                                    <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;部门：<span th:text="${person.unit}">Unit(s)：JiLin
+                                        University</span></p>
+                                    <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;&nbsp;职位：<span th:text="${person.title}">Unit(s)：JiLin
+                                        University</span></p>
+                                    <p><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;&nbsp;领域：<span th:text="${person.field}">Unit(s)：JiLin
+                                        University</span></p>
+                                    <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;邮箱：<span th:text="${person.email}">Unit(s)：JiLin
+                                        University</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="col-md-3 col-sm-6 col-xs-12" style="width:390px;">
+                            <div class="author-card col-md-12 col-sm-12 col-xs-12">
+                                <div class="col-md-4 col-sm-4 col-xs-4 pic" style="margin-top: -18px;">
+                                    <img src="./pictures/pro1.jpg" class="img-circle" alt="Responsive image">
+                                </div>
+                                <div class="author-name col-md-8 col-sm-8 col-xs-8"
+                                     style="margin-top: 16px; padding-left: 30px; font-size: 12px;">
+                                    <a href="#" style="text-decoration: none;"><h3 style="padding-left: 18px; margin-top: 2px;">
+                                        徐昊</h3></a>
+                                    <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;Unit(s)：JiLin
+                                        University</p>
+                                    <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;&nbsp;Title(s)：Associate
+                                        Professor</p>
+                                    <p><span class="glyphicon glyphicon-book" aria-hidden="true"></span>&nbsp;&nbsp;Rearch
+                                        Field(s)：Knowledge Graph 、Human-computer Interaction 、Computer Vision</p>
+                                    <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;xuhao@jlu.edu.cn
+                                    </p>
+                                </div>
+                            </div>
+                        </div>-->
+        </div>
+
+    </section>
+
+</div>
+<footer class="row" style="padding-top: 30px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-8 col-md-7 col-lg-4 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="#"><img style="width:40%;height: 30%;float: left;margin-left:40px ;"
+                                             src="assets/wq4.png" alt=""></a></li>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4 col-md-5 col-lg-5 footer_menuList">
+                <div class="row menuList">
+                    <ul class="firstOrderList nav" style="text-transform: initial">
+                        <li><a href="">Jilin University</a></li>
+
+                        <li><a href="">College of Software Engineering</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="fright copyright col-sm-6 col-md-6 col-lg-12" style="text-align: center;margin-top: -22px;">
+                &copy; <a href="index"> 吉林大学软件工程学院 </a></div>
+        </div>
+    </div>
+</footer>
+<a href="#top">
+    <button type="button" class="btn btn-primary btn-lg go-top">
+        <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+    </button>
+</a>
+<div class="modal fade" id="searchform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     style="height: 100%; width: 100%;">
+    <div class="modal-dialog" role="document" style="height: 100%; width: 60%; margin-top: 99px;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span>
+                </button>
+                <h4 class="modal-title" id="myModalLabel">Smart Search</h4>
+            </div>
+            <div class="modal-body" style="height: 200px;">
+                <form id="domain-search" action="/search" method="get">
+                    <input id="domain-text" type="text" name="domain" placeholder="Search here"/>
+                    <input id="search-btn" type="submit" name="submit" value="Search"/>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onscroll = function () {
+        if ($(window).scrollTop() > 180) {
+            $('.go-top').show();
+        } else {
+            $('.go-top').hide();
+        }
+    }
+</script>
+<script src="js/jquery-2.1.3.min.js" th:src="@{/js/jquery-2.1.3.min.js}"></script>
+<!--Bootstrap JS-->
+<script src="js/bootstrap.min.js" th:src="@{/js/bootstrap.min.js}"></script>
+<!--Owl Carousel-->
+<script src="vendors/owl.carousel/js/owl.carousel.min.js" th:src="@{/js/owl.carousel.min.js}"></script>
+
+</body>
+</html>

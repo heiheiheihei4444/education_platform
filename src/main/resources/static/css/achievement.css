@@ -1,0 +1,198 @@
+.achievement_tab {
+  background-color: #F5F5F5;
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+.shortcode_row.row {
+  margin: 90px 0;
+}
+.shortcode_row.row .shortcode_row_title {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: #404d5f;
+  margin-top: 0;
+  margin-bottom: 35px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+.tabs.tabs-blue .nav-tabs li a {
+  background: #0186d5;
+}
+.tabs.tabs-blue .nav-tabs li a:hover {
+  background: #fe824c;
+}
+.tabs.tabs-orrange .nav-tabs li a {
+  background: #fe824c;
+}
+.tabs.tabs-orrange .nav-tabs li a:hover {
+  background: #0186d5;
+}
+.tabs .nav-tabs {
+  border: none;
+}
+.tabs .nav-tabs li + li {
+  margin-left: 10px;
+}
+.tabs .nav-tabs li a {
+  border: none;
+  margin-right: 0;
+  border-radius: 0;
+  text-transform: uppercase;
+  padding: 0 57px;
+  line-height: 50px;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+}
+.tabs .nav-tabs li.active a {
+  background: #f8fbfd;
+  color: #404d5f;
+  border: none;
+}
+.tabs .tab-content .tab-pane {
+  padding: 30px 35px;
+  background: #f8fbfd;
+}
+.tabs .tab-content .tab-pane h4 {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #404d5f;
+  margin-top: 0;
+  margin-bottom: 2px;
+  padding-left: 0;
+}
+.tabs .tab-content .tab-pane p {
+  font-family: 'Karla', sans-serif;
+  line-height: 26px;
+  font-size: 16px;
+  margin-bottom: 0;
+  color: #8595b1;
+}
+
+ .panel {
+  border-radius: 0;
+  border: 0;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  background: none;
+  margin: 0;
+  padding: 0;
+}
+ .panel .panel-heading {
+  padding: 0;
+  background: #fff;
+  margin: 0;
+}
+ .panel .panel-heading h4 a {
+  display: block;
+  line-height: 50px;
+  text-transform: uppercase;
+  font-family: 'Karla', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: 1px;
+  border: none;
+  padding-left: 30px;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-top: 0;
+  margin-bottom: 0;
+  color: #404d5f;
+}
+ .panel .panel-heading h4 a .sign {
+  float: right;
+  width: 12px;
+  height: 50px;
+  display: inline-block;
+  background: url('../assets/icons/about/plus.png') no-repeat scroll 0 center;
+  margin-right: 25px;
+}
+ .panel .panel-heading h4 a[aria-expanded="true"] {
+  background: #0186d5;
+  color: #fff;
+}
+ .panel .panel-heading h4 a[aria-expanded="true"] .sign {
+  background-image: url('../assets/icons/about/minus.png');
+}
+ .panel .panel-collapse .panel-body {
+  border-top: 0;
+  padding: 30px;
+}
+ .panel .panel-collapse .panel-body .panel_title {
+  font-family: 'Lato', sans-serif;
+  font-weight: bold;
+  color: #404d5f;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 24px;
+  text-transform: uppercase;
+}
+ .panel .panel-collapse .panel-body p {
+  margin: 0;
+  font-family: 'Karla', sans-serif;
+  font-size: 16px;
+  color: #404d5f;
+  line-height: 24px;
+}
+ .panel + .panel {
+  margin-top: 1px;
+}
+ .panel:first-child .panel-heading h4 a {
+  border-top: none;
+}
+.white_bg .panel .panel-heading h4 a {
+  background: #0186d5;
+  color: #fff;
+  line-height: 1.2;
+  padding: 17px 75px 17px 30px;
+  position: relative;
+}
+.white_bg .panel .panel-heading h4 a .sign {
+  background: url('../assets/icons/about/plus2.png') no-repeat scroll center center #0278bf;
+  width: 67px;
+  height: 100%;
+  margin-right: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.white_bg .panel .panel-heading h4 a[aria-expanded="true"] .sign {
+  background-image: url(../assets/icons/about/minus.png);
+}
+.achievement-content {
+  padding-left: 80px;
+  width: 250px;
+}
+.achievement-content .titleRow h4 {
+  padding-bottom: 12px;
+  border-bottom: 2px #6699cc solid;
+}
+.achievement-item {
+  margin-top: 22px;
+  width: 800px;
+  padding-left: 0px;
+}
+.achievement-item .achievement-img {
+  padding-left: 0;
+}
+.achievement-item .achievement-img img {
+  width: 150px;
+  border: 1px #aaa solid;
+  padding: 6px;
+}
+.achievement-item .achievement-title h4 {
+  padding-top: 4px;
+  margin-top: 0px;
+  margin-bottom: 6px;
+  color: #000;
+}
+.achievement-item .achievement-title p {
+  color: #666;
+}
+a {
+  text-decoration: none;
+}
+/*Achievement end*/
+/*----------------------------------------------------------------*/

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<head>
+    <meta charset="utf-8">
+    <base th:href="@{/}">
+    <title>科技成果服务平台</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css" th:href="@{/css/font-awesome.min.css}">
+    <link rel="stylesheet" href="../static/css/index.css" th:href="@{/css/index.css}">
+    <link rel="stylesheet" href="../static/css/person.css" th:href="@{/css/person.css}">
+    <link rel="stylesheet" href="../static/css/achievement.css" th:href="@{/css/achievement.css}">
+    <script src="../static/js/jquery-2.1.3.min.js" th:src="@{/js/jquery-2.1.3.min.js}"></script>
+    <style>
+
+        .go-top {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+
+            cursor: pointer;
+        }
+
+    </style>
+</head>
+
+<body class="default">
+<section class="row top_bar">
+    <div class="" style="margin-left: 62px;margin-right:60px;margin-top: 10px;">
+        <div class="row ">
+            <div class="fleft phone">
+                <p><a href="#" style="
+       text-decoration: none;
+       color: #03536A;
+   ">Intelligent Service Platform for Science and Technology Information</a></p>
+            </div>
+            <div class="fright">
+
+                <div class="fleft" sec:authorize="!isAuthenticated()"><strong><a href="#" th:href="@{/user/login}"
+                                                                                 style="
+          			text-decoration: none;
+          			color: #03536A;">Sign in</a></strong></div>
+                <div class="fleft" sec:authorize="isAuthenticated()"><span style="
+                    text-decoration: none;
+                    color: #03536A;"><span class="glyphicon glyphicon-user"></span>&nbsp;<strong
+                        sec:authentication="name"></strong></span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<nav class="navbar navbar-default navbar-static-top navbar2"style="background: #0186d5;">
+    <div class="container" style="margin-left: -10px;">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header">
+
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#main_nav" aria-expanded="false">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <!-- <a href="book-appointment.html" class="navbar-toggle visible-xs" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a> -->
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="main_nav">
+            <a href="../static/index.html" th:href="@{/index.html}">
+                <img id="img_icon" src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+            <ul  class="nav navbar-nav navbar-right">
+                <li class="active"><a href="../static/index.html" th:href="@{/index}">Home</a></li>
+
+
+                <!-- <li class="dropdown">
+                     <a href="" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Research</a>
+                     <ul class="dropdown-menu" role="menu">
+                         <li><a href="direction/directionlist" th:href="@{/direction/directionlist}">Directions</a></li>
+                         <li><a href="paper/paperlist" th:href="@{/paper/paperlist}">Papers</a></li>
+                         <li><a href="project/projectlist" th:href="@{/project/projectlist}">Projects</a></li>
+                     </ul>
+                 </li>-->
+                <li><a href="direction/directionlist" th:href="@{/paper/paperlist}">Paper</a></li>
+                <li><a href="person/personlist" th:href="@{/person/personlist}">People</a></li>
+                <li><a href="news/newslist" th:href="@{/news/newslist}">News</a></li>
+                <li><a href="../static/aboutus.html" th:href="@{/aboutus}">About Us</a></li>
+                <li><a href="resource/resourcelist" th:href="@{/resource/resourcelist}">Document</a></li>
+
+
+                <!--<li><a href="../static/join.html" th:href="@{/join}">Join Us</a></li>-->
+                <!-- <li class="hidden-xs book"><a href="#" data-toggle="modal" data-target="#appointmefnt_form_pop">Search</a></li> -->
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </div><!-- /.container -->
+</nav>
+<div class="content">
+    <!--/*@thymesVar id="person" type="com.xh.website.module.person.entiy.Person"*/-->
+    <section class="row person_info infomation-scholars">
+        <div class="container">
+            <div class="col-md-3 col-sm-12 basic-info">
+                <div class="info-img col-sm-6 col-md-12">
+                    <img th:src="@{${person.getPhoto()}}" src="../static/assets/img/avatar.png" alt="">
+                </div>
+                <div class="scholar-info col-sm-6 col-md-12">
+                    <p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;&nbsp;职位：<span
+                            th:text="${person.getTitle()}">CAS Academician</span></p>
+                    <p><span class="glyphicon glyphicon-home" aria-hidden="true"></span>&nbsp;&nbsp;部门：<span
+                            th:text="${person.getUnit()}">jihong@jlu.edu.cn</span></p>
+                    <p><span class="glyphicon glyphicon-briefcase" aria-hidden="true"></span>&nbsp;&nbsp;学历：<span
+                            th:text="${person.getDegree()}">Associate Editor of Chemistry Science</span></p>
+                    <p><span class="glyphicon glyphicon-link" aria-hidden="true"></span>&nbsp;&nbsp;电话：<span
+                            th:text="${person.getTelephone()}">10086</span></p>
+                    <p><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>&nbsp;&nbsp;邮箱：<span
+                            th:text="${person.getEmail()}">jihong@jlu.edu.cn</span></p>
+                </div>
+            </div>
+
+            <div class="col-md-9 col-sm-12 scholar-introduction">
+                <div class="col-md-12 col-sm-12 blue-background">
+                    <div class="col-md-4 col-sm-4 name-apartment">
+                        <h2 style="margin-top:13px;" th:text="${person.getName()}">徐昊</h2>
+                    </div>
+                    <div class="col-md-7 col-sm-7 research-area">
+                        <h3 style="padding-top: 28px;"><span class="glyphicon glyphicon-home"></span> &nbsp;&nbsp;<span
+                                th:text="${person.getUnit()}">computer science and Technology</span></h3>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-12 timeline-edu" style="margin-top: 50px;">
+                    <h3 class="blue-line"><b>简介</b></h3>
+                    <div class="row timeline-content">
+                        <p th:text="${person.getBrief()}">个人简介
+                        </p>
+                    </div>
+                </div>
+
+                <!--/*@thymesVar id="papers" type="java.util.List<com.xh.website.module.paper.entity.Paper>"*/-->
+                <div class="col-sm-6 col-md-12 timeline-edu" style="margin-top: 50px;">
+                    <h3 class="blue-line"><b>论文</b></h3>
+                    <div class="row timeline-content paper_row" th:each="paper:${papers}">
+                        <a th:href="${paper.getPaperURL()}" download="" style="text-decoration: none;"><h3
+                                class="paper_title" th:text="${paper.getTitle()}">paper1</h3></a>
+                        <p class="paper_keywords" >
+                            <span style="color: #2f2f2f;">关键词：</span>
+                            <span th:text="${paper.getKeywords()}"></span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="row" style="padding-top: 30px;">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-8 col-md-7 col-lg-4 footer_menuList">
+                    <div class="row menuList">
+                        <ul class="firstOrderList nav" style="text-transform: initial">
+                            <li><a href="#"><img style="width:40%;height: 30%;float: left;margin-left:40px ;"
+                                                 src="assets/wq4.png" alt=""></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-5 col-lg-5 footer_menuList">
+                    <div class="row menuList">
+                        <ul class="firstOrderList nav" style="text-transform: initial">
+                            <li><a href="">Jilin University</a></li>
+
+                            <li><a href="">College of Software Engineering</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="fright copyright col-sm-6 col-md-6 col-lg-12" style="text-align: center;margin-top: -22px;">
+                    &copy; <a href="index"> 吉林大学软件工程学院 </a></div>
+            </div>
+        </div>
+    </footer>
+    <a href="javascript:void(0)" onclick="location.hash='#top';location.replace(location.href)">
+        <button type="button" class="btn btn-primary btn-lg go-top">
+            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+        </button>
+    </a>
+    <div class="modal fade" id="searchform" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         style="height: 100%; width: 100%;">
+        <div class="modal-dialog" role="document" style="height: 100%; width: 60%; margin-top: 99px;">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Smart Search</h4>
+                </div>
+                <div class="modal-body" style="height: 200px;">
+                    <form id="domain-search" action="/search" method="get">
+                        <input id="domain-text" type="text" name="domain" placeholder="Search here"/>
+                        <input id="search-btn" type="submit" name="submit" value="Search"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    window.onscroll = function () {
+        if ($(window).scrollTop() > 180) {
+            $('.go-top').show();
+        } else {
+            $('.go-top').hide();
+        }
+    }
+</script>
+<script src="js/jquery-2.1.3.min.js"></script>
+<!--Bootstrap JS-->
+<script src="js/bootstrap.min.js"></script>
+<!--Owl Carousel-->
+<script src="vendors/owl.carousel/js/owl.carousel.min.js"></script>
+</body>
+</html>

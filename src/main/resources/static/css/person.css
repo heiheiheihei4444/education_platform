@@ -1,0 +1,153 @@
+.breadcrumbs {
+    background-image: url(../assets/img/bg.png);
+    height: 110px;
+}
+
+.breadcrumbs .container .bread-content {
+    padding: 38px 0px;
+}
+
+.breadcrumbs .container p {
+    color: #fff;
+    font-size: 20px;
+}
+
+.breadcrumbs .container p a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.breadcrumbs .container p a:hover {
+    color: #fff;
+}
+
+.infomation-scholars .container {
+    margin-top: 40px;
+}
+
+.infomation-scholars .container {
+    padding-left: 0;
+}
+
+.infomation-scholars .container .basic-info {
+    border: 1px #bbb solid;
+    padding: 16px 0 18px 24px;
+}
+
+.infomation-scholars .container .basic-info .info-img img {
+    width: 220px;
+    border: 0px solid #fff;
+    border-radius: 110px;
+    vertical-align: left;
+    margin: 28px 0 36px 0;
+}
+
+.infomation-scholars .container .basic-info p {
+    margin-left: -10px;
+    padding-top: 10px;
+    font-size: 12px;
+    color: #666;
+}
+
+.scholar-introduction .blue-background {
+    background-image: url(../assets/img/bg.png);
+    height: auto;
+    color: #fff;
+}
+
+.scholar-introduction .blue-background .name-apartment {
+    padding: 40px 46px;
+}
+
+.scholar-introduction .blue-background .research-area h4 {
+    border-bottom: 1px #fff solid;
+    margin-top: 12px;
+    padding-bottom: 10px;
+    width: 160px;
+    margin-bottom: 26px;
+}
+
+.orange-button {
+    width: 120px;
+    height: 120px;
+    background-color: #ED7D31;
+    border: 1px #ED7D31 solid;
+    border-radius: 60px;
+    margin-top: 40px;
+}
+
+.orange-button h4 {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 16px;
+    line-height: 22px;
+}
+
+.timeline-content {
+    padding-left: 12px;
+}
+
+.blue-line {
+    width: 180px;
+    margin-top: 32px;
+    color: #000;
+    border-bottom: 2px #6699cc solid;
+    padding-bottom: 12px;
+    font-size: 16px;
+    margin-bottom: 24px;
+}
+
+.date p {
+    height: 50px;
+    width: 50px;
+    text-align: center;
+    border: 2px #6699cc solid;
+    padding: 7px;
+    border-radius: 25px;
+    font-size: 12px;
+    background-color: #fff;
+}
+
+.details {
+    margin-bottom: 20px;
+}
+
+.details h4 {
+    font-size: 14px;
+    margin-top: 0;
+    padding-bottom: 6px;
+    border-bottom: 1px #333 solid;
+    width: 140px;
+}
+
+.details p {
+    font-size: 12px;
+}
+
+.line {
+    height: 200px;
+    border-left: 2px #6699cc solid;
+    position: absolute;
+    left: 12%;
+}
+
+a {
+    text-decoration: none;
+}
+
+.person_info{
+    min-height: 650px;
+}
+
+.paper_row{
+    border-bottom: #c8c8c8 solid 1px;
+}
+
+.paper_title {
+    margin-top: 2px;
+    font-size: 17px;
+}
+
+.paper_keywords{
+    color: gray;
+}

@@ -1,0 +1,330 @@
+.breadcrumbs {
+  background-image: url(../assets/img/bg.png);
+  height: 80px;
+
+}
+.breadcrumbs .container {
+  padding-left: 0; 
+}
+.breadcrumbs .container .bread-content {
+  padding: 26px 0px;
+}
+.breadcrumbs .container p {
+  color: #fff;
+  font-size: 17px;
+}
+.breadcrumbs .container p a {
+  color: #ccc;
+  text-decoration: none;
+}
+.breadcrumbs .container p a:hover {
+  color: #fff;
+}
+/*----------------------------------------------------------------*/
+.achievement-title {
+  background-color: #eee;
+  padding: 16px 0;
+
+  }
+  .achievement-title h3{
+    font-size: 20px;
+  }
+  .container>p{
+    
+  }
+  .patent-info>h4 a{
+    color: #333;
+  }
+  .patent-info{
+    margin-top: 30px;
+
+  }
+  .patent-info .col-md-6 {
+    padding-left: 0;
+  }
+  .patent-info h4 {
+    padding: 0;
+    padding-left: 0;
+    font-size: 15px;
+    padding-left: 0;
+    font-size: 14px;
+  }
+  .patent-info h4 a {
+    text-decoration: none;
+  }
+  .author-info {
+    border-top: 1px #ddd solid;
+    box-shadow: 0 -6px 6px #ddd;
+  }
+
+  .title-row {
+    padding: 20px 0 0 0;
+  }
+  .author-info .title-row{
+    padding-top: 50px;
+  }
+  .author-info .title-row h4 {
+    font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #404d5f;
+  }
+  .author-info .title-row h4:after {
+    content: '';
+      width: 60px;
+      height: 2px;
+      background: #0186d5;
+      display: block;
+      margin: 13px 0 0;
+  } 
+  .author-info .author-card {
+    background-color: #0F8DD7;
+      padding-left: 0px;
+      padding-right: 0px;
+    padding-top: 22px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+    border: 1px #0F8DD7 solid;
+    border-radius: 4px;
+    margin-bottom: 26px;
+  }
+  .author-card p {
+  
+    margin-bottom: 0; 
+    color: #fff;
+  }
+  .author-info .author-card .pic{
+    padding: 0px;
+    margin-top: 10px;
+  }
+  .author-info .author-card .pic>img{
+    border: 1px solid white;
+    width: 75px;
+    height: 100%;
+
+  }
+  .author-name{
+    padding-right: 0px;
+    padding-left: 15px;
+  }
+  .author-name p {
+  
+    margin-bottom: 16px;
+
+  } 
+  .author-name .child {
+        font-size: 14px;
+  }
+  .author-name .firstchild,.firstchild {
+    font-size: 16px;
+  }
+  .author-name .firstchild a{
+    color: #fff;
+  }
+  .author-name .group-name{
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    
+  }
+  .abstract-info .title-row h4, .shortcode_row .title-row h4{
+    font-family: 'Lato', sans-serif;
+      font-weight: 500;
+      font-size: 18px;
+      margin-bottom: 30px;
+      color: #404d5f;
+  }
+  .abstract-info .title-row h4:after,.shortcode_row .title-row h4:after{
+    content: '';
+      width: 60px;
+      height: 2px;
+      background: #0186d5;
+      display: block;
+      margin: 13px 0 0;
+  } 
+  .abstract-info {
+    margin-bottom: 40px;
+  }
+  .abstract-info .abstract-keywords>div{
+    background-color: #EBEBEB;
+  }
+  .abstract-keywords>div{
+      
+       float: left;
+       margin-right: 50px;
+       padding-top: 5px;
+       padding-right: 30px;
+       padding-left: 30px;
+       padding-bottom: 5px;
+  }
+  .abstract-keywords>div>span{
+    
+    font-size: 16px;  
+
+  }
+    .abstract-detail p{
+      font-size: 12px;
+    }
+  .citiation-author{
+    padding-top: 20px;
+    
+  }
+  .citiation-author>span {
+    font-size: 15px;
+    font-weight: bolder;
+    padding-right: 70px;
+  }
+  .citiation-author1{
+       padding-right: 50px;
+  }
+  .author-info>div>a{
+    
+    text-decoration: none;
+    float: right;
+  }
+    hr{
+        margin-top: 30px;
+        margin-bottom: 30px;
+    }
+
+/*翻页*/
+.paginationRow {
+  text-align: center;
+}
+.paginationRow .pagination {
+  margin: 60px auto 0px;
+}
+.paginationRow .pagination li a {
+  border: none;
+  border-radius: 0;
+  padding: 0 15px;
+  line-height: 45px;
+  font-family: 'Karla', sans-serif;
+  font-weight: bold;
+  color: #404d5f;
+  background: #e5f0fb;
+  display: block;
+  min-width: 45px;
+  margin-right: 5px;
+}
+.paginationRow .pagination li a:hover {
+  background: #0186d5;
+  color: #fff;
+}
+.paginationRow .pagination li.active a {
+  color: #fff;
+  background: #0186d5;
+}
+/*翻页结束*/
+
+  /*----------------------------------------------------------------*/
+  .tabs.tabs-blue .nav-tabs li a{
+    background-color: #0186d5;
+    color: white;
+  }
+  .tabs.tabs-blue .nav-tabs li a:hover {
+    background: #fe824c;
+      }
+  .tabs.tabs-orrange .nav-tabs li a {
+    background: #fe824c;
+
+  }
+  .tabs.tabs-orrange .nav-tabs li a:hover {
+    background: #0186d5;
+  }
+  .tabs .nav-tabs {
+    border: none;
+    margin-left: 15px;
+  }
+  .tabs .nav-tabs li + li {
+    margin-left: 10px;
+  }
+  .tabs .nav-tabs li a {
+    border: none;
+    margin-right: 0;
+    border-radius: 0;
+    padding: 0 57px;
+    line-height: 50px;
+    color: #404d5f;
+    font-family: 'Lato', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .tabs .nav-tabs li.active a {
+    background-color: #f8fbfd;
+    color: #404d5f;
+    border: none;
+  }
+  .tabs .tab-content .tab-pane .title{
+    padding-bottom: 30px;
+    padding-top: 30px;
+
+  }
+  .tabs .tab-content .tab-pane .title p{
+      font-size: 18px;
+      color: #8296AA;
+
+  }
+  .tabs .tab-content .tab-pane {
+    padding: 0px 40px 30px 40px;
+    background-color: #f8fbfd;
+  
+  }
+  .tabs .tab-content .tab-pane2{
+        padding: 0px;
+      background-color: #f8fbfd;
+      font-size: 14px;
+  }
+  .tabs .tab-content .tab-pane2 .scholar-info>p{
+    font-size: 18px;
+  }
+  .tabs .tab-content .tab-pane2 .scholar-info>p>span{
+    font-size: 14px;
+    color: #5E5E5E;
+  }
+  .tabs .tab-content .tab-pane2 .container{
+    padding: 10px 0 40px 0px;
+  }
+  .tabs .tab-content .tab-pane2 .container>nav>ul{
+    
+    margin-top: 40px;
+  }
+  .tabs .tab-content .tab-pane2 .container>div{
+    padding: 30px 0 0 0px;
+  }
+  .tabs .tab-content .tab-pane2 .container>div>div{
+    padding: 0px;
+  }
+  .tabs .tab-content .tab-pane2 .container .scholar-info{
+    padding-left: 30px;
+  }
+  .tabs .tab-content .tab-pane2 .container img{
+    width: 100%;
+    height: 110px;
+  }
+  .tabs .tab-content .tab-pane h4 {
+    font-family: 'Lato', sans-serif;
+    font-weight: bold;
+      font-size: 16px;
+    color: #404d5f;
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+  .tabs .tab-content .tab-pane p {
+    font-family: 'Karla', sans-serif;
+    line-height: 26px;
+    font-size: 12px;
+    margin-bottom: 0;
+    color: #000000;
+  }
+  .tabs .tab-content .tab-pane .glyphicon-user:before{
+      color: grey;
+  }
+    .tabs .tab-content .tab-pane h4+p {
+      color: #666666;
+    }
+    .tabs .tab-content .tab-pane h4+p span{
+      padding-right: 60px;
+    }

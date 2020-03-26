@@ -1,0 +1,261 @@
+.breadcrumbs {
+    background-image: url(../assets/img/bg.png);
+    height: 80px;
+}
+.breadcrumbs .container {
+    padding-left: 0;
+}
+.breadcrumbs .container .bread-content {
+    padding: 26px 0px;
+}
+.breadcrumbs .container p {
+    color: #fff;
+    font-size: 17px;
+}
+.breadcrumbs .container p a {
+    color: #ccc;
+    text-decoration: none;
+}
+.breadcrumbs .container p a:hover {
+    color: #fff;
+}
+/*----------------------------------------------------------------*/
+.row1{
+    font-size: 10px;
+}
+.row1 p{
+    margin-bottom: 0px;
+    font-weight: bold;
+    color: #03536A;
+}
+.row2{
+    margin-right: 200px;
+    margin-top: 9px;
+    margin-bottom: 10px;
+}
+.row2 p{
+    color: #303030;
+    font-weight: bold;
+}
+.row2 a{
+    float: right;
+    font-size: 12px;
+}
+.row2 .signin{
+    border-left: 1px solid #303030;
+    padding-left: 10px;
+}
+.row2 .signup{
+    padding-right: 10px;
+}
+.row3 ul{
+    padding-left: 0px;
+    margin: 0px;
+
+}
+.row3>ul>li{
+    float:left;
+    padding: 0px;
+    padding-right: 20px;
+    list-style: none;
+    font-weight: bold;
+    font-size: 14px;
+}
+a{
+    text-decoration: none;
+    color: #03536A;
+}
+
+.shan{
+height: 430px;
+width: 100%;
+}
+.we>p{
+text-align: center;
+margin-top: 10px;
+margin-bottom: 0px;
+
+}
+.missions-intro{
+padding-top: 15px;
+padding-left: 270px;
+padding-right: 270px;
+text-align: center;
+}
+.we-intro{
+padding-left: 410px;
+padding-right: 410px;
+text-align: left;
+}
+.we-intro>p,.missions-intro>p{
+font-size: 14px;
+line-height:20px ;
+
+}
+.details{
+padding: 20px 160px 0 160px;
+
+}
+.details p{
+font-size: 10px;
+padding: 0 20px 0 20px;
+}
+.media p{
+font-size: 12px;
+}
+.details .r {
+text-align: left;
+}
+.details .l {
+text-align: right;
+}
+.team,.news,.missions{
+margin-top: 90px;
+margin-bottom:30px ;
+
+}
+.team p,.news>p,.news>.news-details>.num>p,.missions>p,.we>p {
+font-size: 70px;
+text-align: center;
+}
+
+.team p:after,.news>p:after,.missions>p:after {
+content: '';
+background: #FFD308;
+width: 160px;
+height: 5px;
+display: block;
+margin: 0 auto;
+position: relative;
+left: 70px;
+}
+.news .news1 p{
+text-align: left;
+}
+
+.l,.r{
+text-align: center;
+}
+.team-picture{
+margin-top: 30px;
+margin-left: 15%;
+margin-right: 15%;
+}
+.news-details{
+margin-top: 30px;
+margin-left: 15%;
+margin-right: 15%;
+}
+.team-picture img{
+padding-right: 0px;
+width: 100%;
+margin: 0 auto;
+
+}
+.num{
+padding-top: 30px;
+padding-left :80px;
+}
+.news-details>.num>.secondp{
+padding-top: 70px;
+}
+.sub{
+vertical-align:sub;
+font-size: 12px;
+font-weight: bold;
+padding-left: 10px;
+}
+.super{
+vertical-align:super;
+font-size: 12px;
+font-weight: bold;
+
+}
+.change{
+border-left: 1px solid #9E9E9E;
+padding-left: 60px;
+padding-top: 30px;
+padding-right: 0px;
+}
+.img-media{
+width: 100%;
+height: 200px;
+}
+.media{
+margin-top: 50px;
+}
+.tubiao{
+width: 45px;
+height: 45px;
+}
+
+.shang{
+margin-left: 0px;
+padding-right: 180px;
+}
+.xia{
+margin-right: 0px;
+padding-left: 180px;
+}
+
+.img-yinhaos{
+width: 60px;
+height: 45px;
+}
+.img-yinhaox{
+width: 35px;
+height: 30px;
+margin-right: 0px;
+
+}
+.media>.shang>.left,.media>.xia>.right{
+padding: 0px;
+}
+.media>.shang>.left-intro{
+padding-left: 55px;
+padding-top: 30px;
+padding-right: 0px;
+}
+.media>.xia>.right-intro{
+padding-top: 40px;
+padding-right: 55px;
+padding-left: 25px;
+}
+.right-intro>img{
+position: relative;
+float: right;
+}
+.media>.shang>.left-intro>p{
+padding-top: 35px;
+padding-left: 20px;
+padding-right: 0px;
+}
+.media>.xia>.right-intro>p{
+padding-top: 85px;
+padding-left: 0px;
+
+}
+.carousel-indicators>li{
+border: 1px solid black;
+border-radius: 0px;
+background-color: black;
+height: 9px;
+}
+.carousel-inner{
+padding-top: 25px;
+padding-left: 30px;
+padding-right: 55px;
+}
+.carousel-inner>.item>p{
+font-size: 13px;
+}
+.carousel-indicators{
+margin-left:  15%;
+margin-bottom: 0px;
+top:-25px;
+}
+.news>.news-details>.change ol>div{
+position: absolute;
+bottom: 0px;
+right: 45%;
+}

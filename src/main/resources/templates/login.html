@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <base th:href="@{/}">
+    <title>用户登录</title>
+    <link rel="stylesheet" href="../static/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}">
+</head>
+
+<style th:inline="text">
+    html, body {
+        height: 100%;
+    }
+
+    body {
+        background: url([[@{/assets/img/background_login.jpg}]]) no-repeat;
+        background-size: cover;
+        padding-top: 30px;
+
+    }
+
+    .login-panel {
+        width: 370px;
+        margin: 10px auto;
+        border: 1px solid #d6d6d6;
+        padding: 25px 5px;
+        border-radius: 7px;
+        box-shadow: 2px 3px 5px #898989;
+        opacity: 0.94;
+    }
+
+    .login-panel h2 {
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+
+    .btn-login {
+        outline: none; /*突出元素的外边界*/
+        border: none;
+        background-color: #1e89d2;
+        border-radius: 7px;
+        color: #FFFFFF;
+        text-align: center;
+        font-size: 23px;
+        padding: 5px;
+        width: 100%;
+        cursor: pointer;
+        margin-top: 18px;
+        box-shadow: 4px 6px 3px #7d7d7d
+    }
+
+    .btn-login span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative; /*相对元素本应该出现的位置*/
+        transition: 0.5s;
+    }
+
+    .btn-login span:after {
+        content: '»';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .btn-login:hover span {
+        padding-right: 25px;
+    }
+
+    .btn-login:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+
+    .btn-login:active {
+        border: none;
+        transform: translate(3px, 4px);
+        box-shadow: 3px 5px 3px #999;
+    }
+
+    .head a img {
+        width: 86px;
+        height: 86px;
+        margin-top: 6px;
+
+    }
+
+    .head a{
+        display: block;
+        width: 100px;
+        height: 100px;
+        background: #1A1A1A;
+        border-radius: 50%;
+    }
+
+    .footer{
+        text-align: center;
+        margin-top: 30px;
+        color: #e8e8e8;
+    }
+</style>
+
+<body>
+<div class=" head">
+    <a href="../static/index.html" th:href="@{/index}" class="center-block text-center" ><img
+            src="../static/assets/icon.png" th:src="@{/assets/icon.png}" alt=""></a>
+</div>
+
+<div class="login-panel panel">
+    <div class="panel-body center-block">
+        <h2 class="text-center">
+            sign in
+        </h2>
+        <form th:action="@{/user/login}" method="post">
+            <div th:if="${param.error}"
+                 class="alert alert-danger" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                用户名或密码错误！
+            </div>
+
+
+            <div th:if="${param.signup_success}"
+                 class="alert alert-success" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                注册成功！
+            </div>
+            <div th:if="${param.logout_success}"
+                 class="alert alert-success" role="alert">
+                <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
+                退出登陆成功！
+            </div>
+            <div>
+                <div>
+                    <label for="username">Username：</label>
+                    <input id="username" class="username form-control" name="username" placeholder="Username" required
+                           autofocus>
+
+                    <label for="password" style="margin-top: 15px">Password：</label>
+                    <input id="password" class="password form-control" name="password" type="password"
+                           placeholder="Password" required>
+                    <button type="submit" class="center-block btn-login"><span>sign in</span></button>
+                    <div style="margin-top: 20px">
+                        <a style="margin-top: 10px" th:href="@{/user/signup}">
+                            还没有账户？点击注册
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="footer">
+    <div class="copyright" style="font-size:15px;font-weight: bold;">© 吉林大学软件学院 </div>
+</div>
+
+</body>
+</html>
